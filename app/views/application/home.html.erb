@@ -1,0 +1,14 @@
+
+<%= render partial: "application/cart_bar", locals: {order: @order} %>
+<div class="container">
+  <div class="card-deck p-5">
+    <% @products.first(3).each do |p| %>
+      <%= render partial: "products/product", locals: {product: p, order: @order} %>
+    <% end %>
+  </div>
+  <div class="card-deck p-5">
+    <% @products.last(3).each do |p| %>
+      <%= render partial: "products/product", locals: {product: p, order: @order} %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="card border-dark" style="width: 18rem;">
+  <%=image_tag(product.image, class: "card-img-top", alt: product.name)%>
+  <div class="card-body">
+    <h5 class="card-title"><%= product.name %></h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= number_to_currency(product.price) %></li>
+  </ul>
+  <div class="card-footer p-0", style="background-color: #e21836;">
+    <%= link_to add_to_cart_line_item_path(product_id: product.id, order_id: order.id), method: :post do %>
+      <div class="btn btn-block", id="atc">Add to Cart</div>
+    <% end %>
+  </div>
+</div>

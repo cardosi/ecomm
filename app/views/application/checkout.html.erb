@@ -1,0 +1,76 @@
+<div class="container pb-4" style="background-color: #cccccc;">
+  <h1 class="text-center mt-5 pt-5">Checkout</h1>
+  <div class="d-none" id="order_id"><%= @order.id %></div>
+  <div class="container">
+    <form id="payment-form">
+      <div class="row">
+        <div class="field">
+          <label for="name">Name</label>
+          <div>
+            <input id="name" class="input" type="text" placeholder="Jane Doe" required autocomplete="name">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="email">Email</label>
+          <div>
+            <input id="email" class="input" type="text" placeholder="jdoe@gmail.com" required autocomplete="email">
+          </div>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <div>
+            <input id="phone" class="input" type="text" placeholder="(999) 999-7777" required autocomplete="phone">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="address">Address</label>
+          <div>
+            <input id="address" class="input" type="text" placeholder="140 Guest St" required autocomplete="address">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="city">City</label>
+          <div>
+            <input id="city" class="input" type="text" placeholder="Boston" required autocomplete="city">
+          </div>
+        </div>
+        <div class="field">
+          <label for="state">State</label>
+          <div>
+            <input id="state" class="input" type="text" placeholder="MA" required autocomplete="state">
+          </div>
+        </div>
+        <div class="field">
+          <label for="zip">Zip</label>
+          <div>
+            <input id="zip" class="input" type="text" placeholder="02135" required autocomplete="postal-code">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field w-50">
+          <label for="card">Card</label>
+          <div id="card-element"></div>
+        </div>
+      </div>
+      <div class="row">
+        <button id="submit">
+          <div class="spinner d-none" id="spinner"></div>
+          <span id="button-text">Pay</span>
+        </button>
+      </div>
+      <p id="card-error" role="alert"></p>
+      <div class="result-message d-none">
+        <h3>Thank You!</h3>
+        <p> Your payment of <%= number_to_currency(@order.total_price) %> has been successfully processed. </p>
+        <p> Your Stripe PaymentIntent ID is <span id="payment-intent-id"></span></p>
+      </div>
+    </form>
+  </div>
+</div>

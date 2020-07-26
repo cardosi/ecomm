@@ -1,0 +1,21 @@
+<div class="container pb-4" style="background-color: #cccccc;">
+  <h1 class="text-center mt-5 pt-5">Cart</h1>
+  <% @line_items.each do |li| %>
+    <%= render partial: "line_items/line_item", locals: {line_item: li, order_id: @order.id} %>
+  <% end %>
+  <div class="row mx-4 align-items-center justify-content-end" style="background-color: white;">
+    <div class="col-3 my-3">
+      <span id="label">Quantity: <%= cart_count(@order.id) %></span>
+    </div>
+    <div class="col-3 my-3 offset-1">
+      <span id="label">Total: <%= number_to_currency(@order.total_price) %></span>
+    </div>
+  </div>
+  <div class="row mx-4 align-items-center justify-content-end" style="background-color: white;">
+    <div class="col-2 my-3">
+      <%= link_to checkout_path(order_id: @order.id) do %>
+        <div class="btn btn-block", id="atc", style="background-color: #cccccc;">Checkout</div>
+      <% end %>
+    </div>
+  </div>
+</div>

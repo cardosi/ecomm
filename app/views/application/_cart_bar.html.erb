@@ -1,0 +1,6 @@
+<nav class="navbar justify-content-end" style="background-color: #cccccc;">
+  <%= link_to cart_path(order_id: order.id) do %>
+    <span class="text-dark h4 align-bottom"><%= cart_count(order.id) %></span>
+    <%=image_tag("cart.png", size: "32", class: "navbar-brand mr-5", alt: "Cart Icon")%>
+  <% end %>
+</nav>

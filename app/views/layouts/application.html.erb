@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ecomm</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="//db.onlinewebfonts.com/c/12ce65fe29a2800b0b0d71fdc0714f2d?family=AvantGardeGothicITCW02XLt" rel="stylesheet" type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/1bf864ccde6f3972f894dcdf25b0e47f?family=ITC+Avant+Garde+Gothic" rel="stylesheet" type="text/css"/>
+  </head>
+
+  <body>
+  <%= render partial: "application/navbar" %>
+    <%= yield %>
+  </body>
+</html>

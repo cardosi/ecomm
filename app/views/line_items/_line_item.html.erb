@@ -1,0 +1,20 @@
+<div class="row m-4 align-items-center" style="background-color: #e21836;">
+  <div class="col-2 pl-0">
+    <%=image_tag(line_item.product.image, height: "100", class: "", alt: line_item.product.name)%>
+  </div>
+  <div class="col-3">
+    <span id="label">Price: <%= number_to_currency(line_item.price) %></span>
+  </div>
+  <div class="col-3">
+    <span id="label">Quantity: <%= line_item.quantity %></span>
+  </div>
+  <div class="col-3">
+    <span id="label">Total: <%= number_to_currency(line_item.total_price) %></span>
+  </div>
+  <div class="col-1">
+    <%= link_to remove_from_cart_line_item_path(line_item_id: line_item.id, order_id: order_id), method: :delete do %>
+      <%=image_tag("remove.png", size: "48", class: "", alt: "Remove Icon")%>
+    <% end %>
+  </div>
+  <div class="col-1"></div>
+</div>

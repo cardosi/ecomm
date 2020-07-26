@@ -1,0 +1,43 @@
+@import "bootstrap";
+@import url(//db.onlinewebfonts.com/c/12ce65fe29a2800b0b0d71fdc0714f2d?family=AvantGardeGothicITCW02XLt);
+@import url(//db.onlinewebfonts.com/c/1bf864ccde6f3972f894dcdf25b0e47f?family=ITC+Avant+Garde+Gothic);
+
+@font-face {
+  font-family: "AvantGardeGothicITCW02XLt";
+  src: url("//db.onlinewebfonts.com/t/12ce65fe29a2800b0b0d71fdc0714f2d.eot");
+  src: url("//db.onlinewebfonts.com/t/12ce65fe29a2800b0b0d71fdc0714f2d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/12ce65fe29a2800b0b0d71fdc0714f2d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/12ce65fe29a2800b0b0d71fdc0714f2d.woff") format("woff"), url("//db.onlinewebfonts.com/t/12ce65fe29a2800b0b0d71fdc0714f2d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/12ce65fe29a2800b0b0d71fdc0714f2d.svg#AvantGardeGothicITCW02XLt") format("svg");
+}
+
+@font-face {
+  font-family: "ITC Avant Garde Gothic";
+  src: url("//db.onlinewebfonts.com/t/1bf864ccde6f3972f894dcdf25b0e47f.eot");
+  src: url("//db.onlinewebfonts.com/t/1bf864ccde6f3972f894dcdf25b0e47f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1bf864ccde6f3972f894dcdf25b0e47f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1bf864ccde6f3972f894dcdf25b0e47f.woff") format("woff"), url("//db.onlinewebfonts.com/t/1bf864ccde6f3972f894dcdf25b0e47f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1bf864ccde6f3972f894dcdf25b0e47f.svg#ITC Avant Garde Gothic") format("svg");
+}
+
+body {
+  font-family: "AvantGardeGothicITCW02XLt";  
+}
+
+nav {
+  font-family: "ITC Avant Garde Gothic";
+}
+
+#atc, #label {
+  font-family: "ITC Avant Garde Gothic";
+}
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

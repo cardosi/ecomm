@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   require 'stripe'
   # This is your real test secret API key.
-  Stripe.api_key = 'sk_test_51H8Ey8DQZ0bf1tPmINx6QhiUTJwPFKoV5XNedY6w6bfYQ9CsXL67rBpK2voJMmYBNGUYNwKvkF2Cguq3YsHJDhYe00Q5AojoJ6'
+  Stripe.api_key = ENV['STRIPE_API_KEY']
   skip_before_action :verify_authenticity_token
 
   def create

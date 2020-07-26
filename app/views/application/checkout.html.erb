@@ -1,76 +1,72 @@
-<div class="container pb-4" style="background-color: #cccccc;">
-  <h1 class="text-center mt-5 pt-5">Checkout</h1>
-  <div class="d-none" id="order_id"><%= @order.id %></div>
-  <div class="container">
-    <form id="payment-form">
-      <div class="row">
-        <div class="field">
-          <label for="name">Name</label>
-          <div>
-            <input id="name" class="input" type="text" placeholder="Jane Doe" required autocomplete="name">
-          </div>
+<div class="row mt-5">
+  <div class="col-6 offset-3 pb-4" style="background-color: #cccccc;">
+    <h1 class="text-center mt-5 pt-5">Checkout</h1>
+    <div class="d-none" id="order_id"><%= @order.id %></div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-11">
+          <form id="payment-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" class="form-control" type="text" placeholder="Jane Doe" required autocomplete="name">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="email">Email</label>
+                <input id="email" class="form-control" type="email" placeholder="jdoe@gmail.com" required autocomplete="email">
+              </div>
+              <div class="form-group col-6">
+                <label for="phone">Phone</label>
+                <input id="phone" class="form-control" type="tel" placeholder="(999) 999-7777" required autocomplete="phone">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input id="address" class="form-control" type="text" placeholder="140 Guest St" required autocomplete="address">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-4">
+                <label for="city">City</label>
+                <input id="city" class="form-control" type="text" placeholder="Boston" required autocomplete="city">
+              </div>
+              <div class="form-group col-4">
+                <label for="state">State</label>
+                <input id="state" class="form-control" type="text" placeholder="MA" required autocomplete="state">
+              </div>
+              <div class="form-group col-4">
+                <label for="zip">Zip</label>
+                <input id="zip" class="form-control" type="text" placeholder="02135" required autocomplete="postal-code">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="card-element">Card</label>
+              <div id="card-element" class="form-control"></div>
+            </div>
+            <div class="form-row justify-content-center">
+              <div class="form-group col-9">
+                <button id="submit" class="w-100 py-2">
+                  <div class="spinner-border d-none" id="spinner" role="status">
+                    <span class="sr-only"></span>
+                  </div>
+                  <span id="button-text" class="text-white">Pay <%= number_to_currency(@order.total_price) %></span>
+                  <span id="success-button-text" class="text-white d-none">Paid <%= number_to_currency(@order.total_price) %></span>
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="row">
-        <div class="field">
-          <label for="email">Email</label>
-          <div>
-            <input id="email" class="input" type="text" placeholder="jdoe@gmail.com" required autocomplete="email">
-          </div>
-        </div>
-        <div class="field">
-          <label for="phone">Phone</label>
-          <div>
-            <input id="phone" class="input" type="text" placeholder="(999) 999-7777" required autocomplete="phone">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label for="address">Address</label>
-          <div>
-            <input id="address" class="input" type="text" placeholder="140 Guest St" required autocomplete="address">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label for="city">City</label>
-          <div>
-            <input id="city" class="input" type="text" placeholder="Boston" required autocomplete="city">
-          </div>
-        </div>
-        <div class="field">
-          <label for="state">State</label>
-          <div>
-            <input id="state" class="input" type="text" placeholder="MA" required autocomplete="state">
-          </div>
-        </div>
-        <div class="field">
-          <label for="zip">Zip</label>
-          <div>
-            <input id="zip" class="input" type="text" placeholder="02135" required autocomplete="postal-code">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="field w-50">
-          <label for="card">Card</label>
-          <div id="card-element"></div>
-        </div>
-      </div>
-      <div class="row">
-        <button id="submit">
-          <div class="spinner d-none" id="spinner"></div>
-          <span id="button-text">Pay</span>
-        </button>
-      </div>
+    </div>
+  </div>
+  <div class="payment-results col-3">
+    <div class="error-message">
+      <h2 id="card-error-title" class="text-center text-danger"></h2>
       <p id="card-error" role="alert"></p>
-      <div class="result-message d-none">
-        <h3>Thank You!</h3>
-        <p> Your payment of <%= number_to_currency(@order.total_price) %> has been successfully processed. </p>
-        <p> Your Stripe PaymentIntent ID is <span id="payment-intent-id"></span></p>
-      </div>
-    </form>
+    </div>
+    <div class="result-message d-none">
+      <h2 class="text-center text-success">Thank You!</h2>
+      <p> Your payment of <%= number_to_currency(@order.total_price) %> has been successfully processed. </p>
+      <p> Your Stripe PaymentIntent ID is: <a href="" id="payment-intent-id"></a></p>
+    </div>
   </div>
 </div>

@@ -18,12 +18,24 @@ body {
   font-family: "AvantGardeGothicITCW02XLt";  
 }
 
-nav {
+nav, .payment-results, #atc, #label, #submit {
   font-family: "ITC Avant Garde Gothic";
 }
 
-#atc, #label {
-  font-family: "ITC Avant Garde Gothic";
+#submit {
+  background-color: #e21836;
+}
+
+#submit:hover {
+  background-color: #a31026;
+}
+
+#submit:disabled {
+  background-color: grey;
+}
+
+#spinner {
+  color: #e21836;
 }
 
 /*

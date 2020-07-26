@@ -38,6 +38,18 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:user_id, :processed, :total_price_cents)
+    params.require(:order).permit(
+      :processed,
+      :total_price_cents,
+      :payment_intent_id,
+      :payment_method_id,
+      :address,
+      :city,
+      :zip,
+      :state,
+      :name,
+      :email,
+      :phone
+    )
   end
 end

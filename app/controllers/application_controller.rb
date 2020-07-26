@@ -14,10 +14,6 @@ class ApplicationController < ActionController::Base
 
   def checkout
     @order = Order.find(params[:order_id])
-    # @purchase_json = {
-    #   order_id: @order.id,
-    #   items: 
-    # }
   end
 
   def about

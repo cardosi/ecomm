@@ -15,7 +15,6 @@ class OrdersController < ApplicationController
       amount: order.total_price_cents,
       currency: 'usd'
     )
-    puts payment_intent
     response = { clientSecret: payment_intent['client_secret'], }
     render json: response
   end
@@ -23,7 +22,6 @@ class OrdersController < ApplicationController
   def stripe_payment_results
     order = Order.find(params[:order_id])
     result = params[:result]
-    puts result
     if result.key?("error")
       order.payment_intent_id = result[:error][:payment_intent][:id]
       order.payment_method_id = result[:error][:payment_method][:id]
@@ -32,9 +30,8 @@ class OrdersController < ApplicationController
       order.payment_intent_id = result[:paymentIntent][:id]
       order.payment_method_id = result[:paymentIntent][:payment_method]
       order.processed = true
-      order.save! 
+      order.save!
     else
-      puts "NOOOOOPE"
     end
   end
 
@@ -43,5 +40,4 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:user_id, :processed, :total_price_cents)
   end
-
 end

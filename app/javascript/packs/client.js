@@ -1,5 +1,5 @@
 // A reference to Stripe.js initialized with your real test publishable API key.
-var stripe = Stripe("pk_test_51H8Ey8DQZ0bf1tPmAMGOstLrj5jVqMQiJywcxZNAqUoT6ma2FxOS3aBNGhWBnFPhQ5xoSZgrc6q6Ldkgv7dPX1Gi0035AE7WQA");
+var stripe = Stripe("pk_test_51H8Ey8DQZ0bf1tPmWNUCSek7zuuCJuZiH6CULu15oPdnKr3ORqdatfyfJRozmcBMBbGYP2qgcgl79E8NrMuLCNaH00Jp3LZsho");
 // The items the customer wants to buy
 document.addEventListener("DOMContentLoaded", function(event) {
   var order_id = document.getElementById("order_id").innerHTML;
@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var phone = document.getElementById("phone").value;
     var address = document.getElementById("address").value;
     var city = document.getElementById("city").value;
-    var zip = document.getElementById("zip").value;
     var state = document.getElementById("state").value;
     loading(true);
     stripe
@@ -78,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             address: {
               city: city,
               line1: address,
-              postal_code: zip,
               state: state
             }
           },

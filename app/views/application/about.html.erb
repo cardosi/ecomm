@@ -1,1 +1,29 @@
-<h1>About</h1>
+<div class="about min-vh-100">
+  <div class="row justify-content-center">
+    <div class="col-9 bg-white mt-3">
+      <h1 class="text-center mt-4">About</h1>
+      <div id="about-text">
+        <div class="row d-block p-5">
+          <h3>What's going on here?</h3>
+          <p>The app was built to have the minimum functionality necessary to demostrate a simple Stripe integration. To that end, a user is presented with a small selection of New Balance's offerings (six different versions of the cult classic 997 sneaker), they can place sneakers in their cart and proceed to checkout. Once on the checkout page Stripe does all the heavy lifting. The Stripe Ruby Gem kicks things off by creating a PaymentIntent object when the page is loaded (before any card information is entered) and passes it to the frontend. The PaymentIntent object serves as record of an attempt or attempts to pay for an order, and will only allow one successful payment per order. Collection of the card information is handled by the Stripe Elements UI Library. Elements can be implemented with a single HTML element. Stripe.js automatically transforms your HTML into something that can authenticate a user, verify card details, process a payment, and surface errors, all without touching the backend. Once an attempt is completed, Stripe.js sends a unique PaymentIntent ID to the backend so it can be stored with the order.</p>
+          <p>This integration, while simple and powerful, barely scratches the surface of Stripe's capabilities. It was built with growth in mind, and could be iterated on to satisfy any need across the payment stack.</p>
+        </div>
+        <div class="row d-block p-5">
+          <h3>What Stripe tools are being used?</h3>
+          <ul>
+            <li><a href="https://stripe.com/docs/payments/payment-intents">Stripe PaymentIntents API</a></li>
+            <li><a href="https://stripe.com/docs/stripe-js">Stripe.js and Stripe Elements UI Library</a></li>
+            <li><a href="https://github.com/stripe/stripe-ruby">Stripe Ruby Gem</a></li>
+          </ul>
+        </div>
+        <div class="row d-block p-5">
+          <h3>References</h3>
+          <ul>
+            <li><a href="https://stripe.com/docs/testing#cards">Stripe Test Card Data</a></li>
+            <li><a href="https://github.com/cardosi/ecomm">Github Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

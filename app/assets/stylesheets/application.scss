@@ -18,7 +18,7 @@ body {
   font-family: "AvantGardeGothicITCW02XLt";  
 }
 
-nav, .payment-results, #atc, #label, #submit {
+nav, .payment-results, #atc, #label, #submit, #about-text {
   font-family: "ITC Avant Garde Gothic";
 }
 
@@ -30,7 +30,7 @@ nav, .payment-results, #atc, #label, #submit {
   background-color: #a31026;
 }
 
-#submit:disabled {
+#submit:disabled, .about {
   background-color: grey;
 }
 

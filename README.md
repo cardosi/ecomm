@@ -37,7 +37,44 @@ This app was built using Ruby on Rails, PostgreSQL, Bootstrap, and Heroku. All o
 * Ruby 2.6.3
 * Rails 6.0.3.2
 
+### Setup
 
+Clone this repository and intstall dependencies:
+```
+$ git clone https://github.com/cardosi/ecomm.git
+$ cd ecomm
+$ bundle install
+```
 
+Create a `.env` file in the root directory:
+```
+$ touch .env
+```
 
+Add your Stripe Secret Key to the .env file (it should start with `sk_):
+```
+# .env
+export STRIPE_SECRET_KEY=<your_stripe_secret_key_here>
+```
 
+Replace the existing Stripe Publishable Key with your own in `app/javascript/packs/client.js:2`
+```
+# app/javascript/packs/client.js
+
+1  // A reference to Stripe.js initialized with your real test publishable API key.
+2  var stripe = Stripe("<your_stripe_publishable_key_here>");
+3
+```
+
+Migrate and seed the database (Postgresql must be installed and running locally):
+```
+$ rails db:migrate
+$ rails db:seed
+```
+
+Start the rails server:
+```
+$ rails s
+```
+
+Open a browser and navigate to: http://localhost:3000/

@@ -1,5 +1,6 @@
 // A reference to Stripe.js initialized with your real test publishable API key.
 var stripe = Stripe("pk_test_51H8Ey8DQZ0bf1tPmWNUCSek7zuuCJuZiH6CULu15oPdnKr3ORqdatfyfJRozmcBMBbGYP2qgcgl79E8NrMuLCNaH00Jp3LZsho");
+
 // The items the customer wants to buy
 document.addEventListener("DOMContentLoaded", function(event) {
   var order_id = document.getElementById("order_id").innerHTML;
